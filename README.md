@@ -27,6 +27,12 @@ module.exports = {
         eventTypes: {
           outboundLinkClick: 'OUTBOUND_LINK_CLICK',
           pageView: 'PAGE_VIEW',
+        },
+        // Amplitude JS SDK configuration options (optional)
+        amplitudeConfig: {
+          saveEvents: true,
+          includeUtm: true,
+          includeReferrer: true
         }
       },
     },
@@ -69,3 +75,7 @@ If you need to exclude any path from the tracking system, you can add it (one or
 To override the default event types that are used for page event and outbound link clicks, include this option. The value should be a map with two keys: "outboundLinkClick", and "pageView". For example:
 
 The default values for these events are "outbound link click" and "page view".
+
+## The "amplitudeConfig" option
+
+Configuration settings passed to the `amplitude.getInstance().init()` call. Allows you to enable automatic collection of UTM params and referrer info and change persistence and upload behavior. See https://developers.amplitude.com/#platform-specific-settings for a full list of available options.

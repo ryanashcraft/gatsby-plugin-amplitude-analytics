@@ -63,7 +63,7 @@ exports.onRenderBody = (
     ;e.amplitude=n})(window,document);
   }
   if (typeof window.amplitude === "object") {
-    window.amplitude.getInstance().init("${pluginOptions.apiKey}");
+    window.amplitude.getInstance().init("${pluginOptions.apiKey}", null, ${pluginOptions.amplitudeConfig});
   }`,
         }}
       />,
