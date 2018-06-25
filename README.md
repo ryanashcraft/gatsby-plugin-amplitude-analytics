@@ -78,4 +78,4 @@ The default values for these events are "outbound link click" and "page view".
 
 ## The "amplitudeConfig" option
 
-Configuration settings passed to the `amplitude.getInstance().init()` call. Allows you to enable automatic collection of UTM params and referrer info and change persistence and upload behavior. See https://developers.amplitude.com/#platform-specific-settings for a full list of available options.
+Configuration settings passed to the `amplitude.getInstance().init()` call. This option allows you to enable automatic collection of UTM params and referrer info and change persistence and upload behavior. See https://developers.amplitude.com/#platform-specific-settings for a full list of available options.
