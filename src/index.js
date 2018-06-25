@@ -23,7 +23,7 @@ function OutboundLink(props) {
         if (props.target && props.target.toLowerCase() !== `_self`) {
           redirect = false
         }
-        if (window.amplitude) {
+        if (typeof window.amplitude === 'object') {
           window.amplitude.getInstance().logEvent(window.amplitudeEventTypes.outboundLinkClick, {
             href: props.href,
           }, () => {

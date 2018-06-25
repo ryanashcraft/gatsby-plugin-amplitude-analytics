@@ -62,8 +62,8 @@ exports.onRenderBody = (
     ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
     ;e.amplitude=n})(window,document);
   }
-  if (typeof amplitude === "function") {
-    amplitude.getInstance().init("${pluginOptions.apiKey}");
+  if (typeof window.amplitude !== "object") {
+    window.amplitude.getInstance().init("${pluginOptions.apiKey}");
   }`,
         }}
       />,
