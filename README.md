@@ -1,6 +1,6 @@
 # gatsby-plugin-amplitude-analytics
 
-Easily add Amplitude Analytics to your Gatsby site.
+Easily add Amplitude Analytics to your Gatsby site to automatically track page views and outbound link clicks.
 
 ## Install
 
@@ -33,7 +33,7 @@ module.exports = {
 To make it easy to track clicks on outbound links in Amplitude Analytics,
 the plugin provides a component.
 
-To use it, simply import it and use it like you would the `<a>` element e.g.
+To use it, simply import it and use it like you would the `<a>` element. For example:
 
 ```jsx
 import React
@@ -57,3 +57,16 @@ If you enable this optional option, Amplitude Analytics will not be loaded at al
 ## The "exclude" option
 
 If you need to exclude any path from the tracking system, you can add it (one or more) to this optional array as glob expressions.
+
+## "eventTypes" option
+
+To override the default event types that are used for page event and outbound link clicks, include this option. The value should be a map with two keys: "outboundLinkClick", and "pageView". For example:
+
+```js
+eventTypes: {
+  outboundLinkClick: "OUTBOUND_LINK_CLICK",
+  pageView: "PAGE_VIEW"
+}
+```
+
+The default values for these events are "outbound link click" and "page view".
