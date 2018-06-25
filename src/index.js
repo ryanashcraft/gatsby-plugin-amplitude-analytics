@@ -24,7 +24,7 @@ function OutboundLink(props) {
           redirect = false
         }
         if (window.amplitude) {
-          window.amplitude.logEvent(window.amplitudeEventTypes.outboundLinkClick, {
+          window.amplitude.getInstance().logEvent(window.amplitudeEventTypes.outboundLinkClick, {
             href: props.href,
           }, () => {
             if (redirect) {

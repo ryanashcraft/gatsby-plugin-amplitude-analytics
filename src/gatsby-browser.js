@@ -8,7 +8,7 @@ exports.onRouteUpdate = function({ location }) {
     ) {
       return
     }
-    amplitude.logEvent(window.amplitudeEventTypes.pageView, {
+    amplitude.getInstance().logEvent(window.amplitudeEventTypes.pageView, {
       location: location ? location.pathname + location.search + location.hash : undefined
     })
   }
