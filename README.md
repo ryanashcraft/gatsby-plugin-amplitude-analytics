@@ -4,10 +4,6 @@ Easily add Amplitude Analytics to your Gatsby site. Automatically tracks page vi
 
 ## Install
 
-`yarn add gatsby-plugin-amplitude-analytics`
-
-or
-
 `npm install --save gatsby-plugin-amplitude-analytics`
 
 ## How to use
