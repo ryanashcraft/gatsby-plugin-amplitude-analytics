@@ -13,7 +13,7 @@ Easily add Amplitude Analytics to your Gatsby site. Automatically tracks page vi
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-ampiltude-analytics`,
+      resolve: `gatsby-plugin-amplitude-analytics`,
       options: {
         // Specify the API key for your Amplitude Project (required)
         apiKey: "YOUR_AMPLITUDE_ANALYTICS_API_KEY",

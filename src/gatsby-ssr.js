@@ -27,8 +27,8 @@ exports.onRenderBody = (
       : ``
   }
   window.amplitudeEventTypes = {
-    outboundLinkClick: ${(pluginOptions.eventTypes || {}).outboundLinkClick || '"outbound link click"'},
-    pageView: ${(pluginOptions.eventTypes || {}).pageView || '"page view"'}
+    outboundLinkClick: "${(pluginOptions.eventTypes || {}).outboundLinkClick || 'outbound link click'}",
+    pageView: "${(pluginOptions.eventTypes || {}).pageView || 'page view'}"
   };
   if(${
     typeof pluginOptions.respectDNT !== `undefined` &&
