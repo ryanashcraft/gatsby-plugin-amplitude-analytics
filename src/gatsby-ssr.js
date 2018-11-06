@@ -13,10 +13,8 @@ exports.onRenderBody = (
         amplitudeExcludePaths.push(mm.makeRe())
       })
     }
-    const setComponents = pluginOptions.head
-      ? setHeadComponents
-      : setPostBodyComponents
-    return setComponents([
+
+    const amplitudeScript = (
       <script
         key={`gatsby-plugin-amplitude-analytics`}
         dangerouslySetInnerHTML={{
@@ -66,8 +64,24 @@ exports.onRenderBody = (
     window.amplitude.getInstance().init("${pluginOptions.apiKey}", null, ${JSON.stringify(pluginOptions.amplitudeConfig)});
   }`,
         }}
+      />
+    )
+
+    setHeadComponents([
+      <link
+        key="gatsby-plugin-amplitude-analytics-preconnect-0"
+        rel="preconnect"
+        href="https://cdn.amplitude.com"
       />,
+      <link
+        key="gatsby-plugin-amplitude-analytics-preconnect-1"
+        rel="preconnect"
+        href="https://api.amplitude.com"
+      />,
+      pluginOptions.head ? amplitudeScript : ''
     ])
+
+    return setPostBodyComponents([!pluginOptions.head ? amplitudeScript : ''])
   }
 
   return null
