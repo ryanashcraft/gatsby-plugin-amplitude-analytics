@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-amplitude-analytics",
   "description": "Plugin to add Amplitude analytics to a Gatsby site",
-  "version": "1.5.0",
+  "version": "2.0.0-alpha.0",
   "author": "Ryan Ashcraft <ryan@ryanashcraft.me>",
   "bugs": {
     "url": "https://github.com/ryanashcraft/gatsby-plugin-amplitude-analytics/issues"
