@@ -37,7 +37,9 @@ module.exports = {
           saveEvents: true,
           includeUtm: true,
           includeReferrer: true
-        }
+        },
+        // Specify NODE_ENVs in which the plugin should be loaded (optional)
+        environments: ["production"],
       },
     },
   ],
