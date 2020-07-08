@@ -1,6 +1,10 @@
-exports.onRouteUpdate = function({ location }) {
-  // Don't track while developing.
-  if (process.env.NODE_ENV === `production` && typeof window.amplitude === `object`) {
+exports.onRouteUpdate = function({ location }, pluginOptions) {
+  // Only track when in an environment specified by pluginOptions. Default to
+  // [`production`] if the config option is not present.
+  if (
+      (pluginOptions.environments || [`production`]).includes(process.env.NODE_ENV)
+      && typeof window.amplitude === `object`
+  ) {
     if (
       location &&
       typeof window.amplitudeExcludePaths !== `undefined` &&
