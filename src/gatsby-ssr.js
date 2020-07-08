@@ -4,7 +4,9 @@ exports.onRenderBody = (
   { setHeadComponents, setPostBodyComponents },
   pluginOptions
 ) => {
-  if (process.env.NODE_ENV === `production`) {
+  // Only include if the current env is included in the environments specified in
+  // pluginOptions. Default to [`production`] if the config option is not present.
+  if ((pluginOptions.environments || [`production`]).includes(process.env.NODE_ENV)) {
     let amplitudeExcludePaths = []
     if (typeof pluginOptions.exclude !== `undefined`) {
       const Minimatch = require(`minimatch`).Minimatch
