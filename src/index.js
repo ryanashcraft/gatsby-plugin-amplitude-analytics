@@ -7,17 +7,17 @@ const MIDDLE_CLICK = 1;
 function OutboundLink({ eventType, eventProperties, href, target, onClick, children, ...rest }) {
   const handleClick = e => {
     const amplitudeEventType = eventType || window.amplitudeEventTypes.outboundLinkClick;
-    const amplitudeDetails = Object.assign({ href: href }, eventProperties)
+    const amplitudeProperties = Object.assign({ href: href }, eventProperties)
     const sameTarget = target !== NEWTAB;
     const normalClick = !(e.ctrlKey || e.shiftKey || e.metaKey || e.button === MIDDLE_CLICK);
 
     if (sameTarget && normalClick) {
       e.preventDefault();
-      window.amplitude.getInstance().logEvent(amplitudeEventType, amplitudeDetails, () => {
+      window.amplitude.getInstance().logEvent(amplitudeEventType, amplitudeProperties, () => {
         window.location.href = href;
       });
     } else {
-      window.amplitude.getInstance().logEvent(amplitudeEventType, amplitudeDetails);
+      window.amplitude.getInstance().logEvent(amplitudeEventType, amplitudeProperties);
     }
 
     if (onClick) {
