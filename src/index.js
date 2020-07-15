@@ -7,7 +7,7 @@ const MIDDLE_CLICK = 1;
 function OutboundLink({ eventType, eventProperties, href, target, onClick, children, ...rest }) {
   const handleClick = e => {
     const amplitudeEventType = eventType || window.amplitudeEventTypes.outboundLinkClick;
-    const amplitudeProperties = Object.assign({ href: href }, eventProperties)
+    const amplitudeProperties = Object.assign({ href: href }, eventProperties);
     const sameTarget = target !== NEWTAB;
     const normalClick = !(e.ctrlKey || e.shiftKey || e.metaKey || e.button === MIDDLE_CLICK);
 
