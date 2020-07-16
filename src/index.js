@@ -6,6 +6,9 @@ function OutboundLink(props) {
     <a
       {...props}
       onClick={e => {
+        const amplitudeEventType = props.eventType || window.amplitudeEventTypes.outboundLinkClick;
+        const amplitudeEventProperties = Object.assign({ href: href }, props.eventProperties);
+  
         if (typeof props.onClick === `function`) {
           props.onClick()
         }
@@ -24,9 +27,7 @@ function OutboundLink(props) {
           redirect = false
         }
         if (typeof window.amplitude === 'object') {
-          window.amplitude.getInstance().logEvent(window.amplitudeEventTypes.outboundLinkClick, {
-            href: props.href,
-          }, () => {
+          window.amplitude.getInstance().logEvent(amplitudeEventType, amplitudeEventProperties, () => {
             if (redirect) {
               document.location = props.href
             }
@@ -47,6 +48,8 @@ OutboundLink.propTypes = {
   href: PropTypes.string,
   target: PropTypes.string,
   onClick: PropTypes.func,
+  eventType: PropTypes.string,
+  eventProperties: PropTypes.string,
 }
 
 export { OutboundLink }
