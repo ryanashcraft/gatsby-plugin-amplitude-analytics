@@ -7,7 +7,7 @@ function OutboundLink(props) {
       {...props}
       onClick={e => {
         const amplitudeEventType = props.eventType || window.amplitudeEventTypes.outboundLinkClick;
-        const amplitudeEventProperties = Object.assign({ href: href }, props.eventProperties);
+        const amplitudeEventProperties = Object.assign({ href: props.href }, props.eventProperties);
   
         if (typeof props.onClick === `function`) {
           props.onClick()
