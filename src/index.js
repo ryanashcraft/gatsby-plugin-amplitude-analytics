@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-function OutboundLink({eventType, eventProperties, ...props}) {
+const OutboundLink = React.forwardRef(({eventType, eventProperties, ...props}, ref) => {
   return (
     <a
       {...props}
+      ref={ref}
       onClick={e => {
         const amplitudeEventType = eventType || window.amplitudeEventTypes.outboundLinkClick;
         const amplitudeEventProperties = Object.assign({ href: props.href }, eventProperties);
@@ -42,7 +43,7 @@ function OutboundLink({eventType, eventProperties, ...props}) {
       }}
     />
   )
-}
+})
 
 OutboundLink.propTypes = {
   href: PropTypes.string,
