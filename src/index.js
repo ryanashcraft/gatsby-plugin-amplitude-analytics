@@ -1,14 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-function OutboundLink(props) {
+function OutboundLink({eventType, eventProperties, ...props}) {
   return (
     <a
       {...props}
       onClick={e => {
-        const amplitudeEventType = props.eventType || window.amplitudeEventTypes.outboundLinkClick;
-        const amplitudeEventProperties = Object.assign({ href: props.href }, props.eventProperties);
-  
+        const amplitudeEventType = eventType || window.amplitudeEventTypes.outboundLinkClick;
+        const amplitudeEventProperties = Object.assign({ href: props.href }, eventProperties);
+
         if (typeof props.onClick === `function`) {
           props.onClick()
         }
@@ -49,7 +49,7 @@ OutboundLink.propTypes = {
   target: PropTypes.string,
   onClick: PropTypes.func,
   eventType: PropTypes.string,
-  eventProperties: PropTypes.string,
+  eventProperties: PropTypes.object,
 }
 
 export { OutboundLink }
