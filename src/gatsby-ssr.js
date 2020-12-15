@@ -38,9 +38,9 @@ exports.onRenderBody = (
   }) {
     (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
     ;r.type="text/javascript"
-    ;r.integrity="sha384-cukXwabQy+j/QA1+RqiXSzxhgQg5Rrn3zVszlwH3pWj/bXJxlA8Ge7NhcD6vP2Ik"
+    ;r.integrity="sha384-BFhCFljbuMkiF3EzVMjFk+zh1dxo9ckGpYDTPLhKibORvR5LPenaPdnGFD9VNZJr"
     ;r.crossOrigin="anonymous";r.async=true
-    ;r.src="https://cdn.amplitude.com/libs/amplitude-7.1.0-min.gz.js"
+    ;r.src="https://cdn.amplitude.com/libs/amplitude-7.3.3-min.gz.js"
     ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
     console.log("[Amplitude] Error: could not load SDK")}}
     ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
